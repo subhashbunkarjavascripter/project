@@ -19,7 +19,7 @@
                 
                 <form action="/addTask" method="post">
                     <h5>Select user</h5>
-                    <select name="user" id="user">
+                    <select name="user" id="user" style="width: 8vw; height:2vw; font-size:1.5vw; border:none; border-radius:10px;">
                         <% users.forEach(user =>{ %>
                             <option value="<%= user._id %>"><%= user.username %></option>
                             <%  });  %>
