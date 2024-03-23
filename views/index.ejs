@@ -1,0 +1,54 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../stylesheets/style.css">
+ </head>
+ <body>
+  <div id="main">
+    <div id="nav">
+        <h1>user can create and exports task and details</h1>
+    </div>
+     <div id="container">
+
+  <button onclick="redirectToaddUser()">Add User</button>
+  <button onclick="redirectToaddTask()">Add Task</button>
+  
+  <a href="/export" download="users_and_tasks.xlsx">
+    Export Users & Tasks
+  </a> 
+  
+    </div>
+
+    <h1>User Detail</h1>
+    <div class="user-details-container">
+      <% users.forEach(function(user, index) { %>
+          <div class="user-details" id="user<%= index + 1 %>_details">
+              <h3>Name: <%= user.username %></h3>
+              <p>Email: <%= user.email %></p>
+              <p>Mobile: <%= user.mobile %></p>
+          </div>
+      <% }); %>
+  </div>
+
+  </div>
+
+
+
+
+  <script>
+    function redirectToaddTask() {
+      window.location.href = "/addTask";
+         }
+  
+     function redirectToaddUser() {
+    window.location.href = "/addUser";
+      }
+  </script>
+
+
+
+ </body>
+ </html>

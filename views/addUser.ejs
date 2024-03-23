@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <link rel="stylesheet" href="../stylesheets/style.css">
+
+</head>
+<body>
+
+    <div id="main">
+
+        <div id="nav">
+            <h1>add user</h1>
+
+        </div>
+        
+        <div id="center">
+
+            
+            <form action="/addUser" method="post" onsubmit="return validateForm()">
+                <h3>Name</h3>
+                <input type="text" name="username" id="username" placeholder="Name" required>
+                <br><br>
+                <h3>Email</h3>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <br><br>
+                <h3>Mobile</h3>
+                <input type="text" name="mobile" id="mobile" placeholder="mobile" required>
+                <br><br>
+                <button>add User</button>
+                
+            </form>
+        </div>
+
+
+
+</div>
+    
+    
+    
+    <script>
+        function validateForm() {
+            var name = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var mobile = document.getElementById("mobile").value;
+
+            if (!name) {
+                alert("Please enter your Name.");
+                return false;
+            }
+
+            var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (!emailRegex.test(email)) {
+                alert("Invalid Email Address");
+                return false;
+            }
+
+            var mobileRegex = /^\d{10}$/;
+            if (!mobileRegex.test(mobile)) {
+                alert("Invalid Mobile Number. Please enter a 10-digit mobile number.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+
+</body>
+</html>
